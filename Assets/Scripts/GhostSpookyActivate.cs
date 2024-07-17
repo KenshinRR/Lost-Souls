@@ -8,10 +8,11 @@ public class GhostSpookyActivate : StateMachineBehaviour
     private float _ticks = 0;
 
     [SerializeField]
-    public float MinActivateTime = 5.0f;
+    public int MinActivateTime = 5;
     [SerializeField]
-    public float MaxActivateTime = 8.0f;
+    public int MaxActivateTime = 8;
 
+    [SerializeField]
     private float _activateTime = 5.0f;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -34,7 +35,7 @@ public class GhostSpookyActivate : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        this._activateTime = Random.Range(MinActivateTime, MaxActivateTime);
+        this._activateTime = Random.Range(MinActivateTime, MaxActivateTime + 1);
         animator.SetBool("isActive", false);
     }
 
