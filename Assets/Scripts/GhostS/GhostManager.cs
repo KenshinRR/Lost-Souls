@@ -9,6 +9,10 @@ public class GhostManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> Possesed;
 
+    public List<GameObject> Possessed
+    {
+        get { return this.Possesed;}
+    }
     private void Awake()
     {
         if(Instance == null)
