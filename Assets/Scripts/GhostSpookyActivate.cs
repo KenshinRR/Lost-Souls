@@ -24,6 +24,9 @@ public class GhostSpookyActivate : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //if not possessed, don't do anything
+        if (!animator.GetBool("isPossessed")) return;
+
         this._ticks += Time.deltaTime;
         if (this._ticks > _activateTime)
         {

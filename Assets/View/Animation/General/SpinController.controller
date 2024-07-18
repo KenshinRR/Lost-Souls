@@ -11,6 +11,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: isActive
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isPossessed
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -983210615858335536}
   m_Solo: 0
@@ -124,10 +127,16 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: testController
+  m_Name: SpinController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isActive
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: isPossessed
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
