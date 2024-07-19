@@ -30,7 +30,17 @@ public class GhostManager : MonoBehaviour
     {
         for(int i = 0; i < Possesed.Count; i++)
         {
-            Animator animator = this.Possesed[i].GetComponent<Animator>();
+            GameObject currentGhost = this.Possesed[i];
+            Animator animator = currentGhost.GetComponent<Animator>();
+
+            currentGhost.AddComponent<ReapedHandler>();
+
+            //adding collider
+            if (this.Possesed[i].GetComponent<MeshCollider>() == null)
+            {
+                currentGhost.AddComponent<BoxCollider>();
+            }
+
             animator.SetBool("isPossessed", true);
         }
         
