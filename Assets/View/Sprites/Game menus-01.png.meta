@@ -151,6 +151,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Scaleable-UI-Bg
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 1861
+        width: 1522
+        height: 1505
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 265, y: 201, z: 262, w: 184}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5064565fdb9f4204899b08e62b095a5b
+      internalID: -1471342218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bg
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 692
+        width: 1143
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824b950fea985b74cac5fcfdb0b3ef7b
+      internalID: -1538239535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -162,8 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Bg: -1538239535
       ButtonSelected: 1804108812
       ButtonUnselected: -945446156
+      Scaleable-UI-Bg: -1471342218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
