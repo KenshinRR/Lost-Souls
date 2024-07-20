@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LostSouls.unity
     guid: 4fbed3bdb60394a46b11182765458293
+  - enabled: 1
+    path: Assets/Scenes/SoulsEscapingScene.unity
+    guid: 14f12b36a23e70f4987b7c591703519a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
