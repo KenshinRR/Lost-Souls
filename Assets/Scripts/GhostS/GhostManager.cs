@@ -45,10 +45,10 @@ public class GhostManager : MonoBehaviour
             currentGhost.GetComponentInChildren<ShineBehavior>().possessedID = i;
 
             //adding collider
-            if (this.Possesed[i].GetComponent<MeshCollider>() == null)
-            {
-                currentGhost.AddComponent<BoxCollider>();
-            }
+            //if (this.Possesed[i].GetComponent<MeshCollider>() == null)
+            //{
+            //    currentGhost.AddComponent<BoxCollider>();
+            //}
 
             animator.SetBool("isPossessed", true);
         }

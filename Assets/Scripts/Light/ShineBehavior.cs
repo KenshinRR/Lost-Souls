@@ -6,7 +6,7 @@ public class ShineBehavior : MonoBehaviour {
     [SerializeField] GameObject player;
     private LensFlare flare;
 
-    private bool Shine = true;
+    private bool Shine = false;
     private float distance = 0.0f;
 
     public int possessedID;
@@ -17,7 +17,7 @@ public class ShineBehavior : MonoBehaviour {
         int id = parameters.GetIntExtra(ID, 0);
 
         if(id != this.possessedID) {
-            Debug.Log($"ID not Found on possessedID{this.possessedID}");
+            //Debug.Log($"ID not Found on possessedID{this.possessedID}");
         }
         
         if(id == this.possessedID) {
@@ -41,6 +41,16 @@ public class ShineBehavior : MonoBehaviour {
         else {
             this.flare.enabled = false;
         }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.name == this.player.name) {
+            this.Shine = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        this.Shine = false;
     }
 
     private void Start() {
