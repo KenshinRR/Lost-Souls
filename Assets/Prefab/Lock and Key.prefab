@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 924852972828603657}
   - component: {fileID: 59667850623263442}
+  - component: {fileID: 5240827563677106614}
   m_Layer: 0
   m_Name: Lock and Key
   m_TagString: Untagged
@@ -58,6 +59,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!64 &5240827563677106614
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544575825890245427}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4239716352457867077
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 4239716352457867077}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0049, y: 0.034, z: -0.153}
+  m_LocalPosition: {x: 0.005, y: 0.013, z: 0.226}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
