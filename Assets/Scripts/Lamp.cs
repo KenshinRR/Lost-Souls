@@ -11,12 +11,30 @@ public class Lamp : MonoBehaviour {
     private List<GameObject> souls;
     private GameObject soul = null;
 
+    public List<GameObject> Souls {
+        get { return souls; }
+        set { souls = value; }
+    }
+
+    private void CheckReapedSoul() {
+        bool active = false;
+        this.souls = GhostManager.Instance.Possessed;
+
+        for (int i = 0; i < souls.Count; i++) {
+            if (souls[i] == this.soul) {
+                active = true;
+            }
+        }
+
+        if (!active) {
+            this.soul = null;
+        }
+    }
 
     private void CalculateDistance() {
         float distance = Vector3.Distance(this.transform.position, this.soul.transform.position);
-        Debug.Log(distance);
 
-        distance = Mathf.Clamp(distance, 0 , 5.1f);
+        distance = Mathf.Clamp(distance, 0, 5.1f);
 
         float intensity = Mathf.Lerp(1.0f, 0.1f, distance / 5.1f);
 
@@ -29,7 +47,10 @@ public class Lamp : MonoBehaviour {
     }
 
     private void Update() {
-        if(this.soul != null) {
+        this.CheckReapedSoul();
+
+        if (this.soul != null) {
+            Debug.Log(this.soul.gameObject.name);
             this.CalculateDistance();
         }
         else {
@@ -38,11 +59,11 @@ public class Lamp : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        Animator animator = other.GetComponentInParent<Animator>();
-        if (animator) {
+        ReapedHandler soul = other.GetComponentInParent<ReapedHandler>();
+        if (soul) {
             for (int i = 0; i < this.souls.Count; i++) {
-                if (this.souls[i] == animator.gameObject) {
-                    this.soul = animator.gameObject;
+                if (this.souls[i] == soul.gameObject) {
+                    this.soul = soul.gameObject;
                 }
             }
         }
