@@ -13,6 +13,13 @@ public class GhostManager : MonoBehaviour
     {
         get { return this.Possesed;}
     }
+
+    public const string SOUL = "SOUl";
+    public void ReapSoul(Parameters parameters) {
+        GameObject soul = parameters.GetGameObjectExtra(SOUL);
+        
+        this.Possesed.Remove(soul);
+    }
     private void Awake()
     {
         if(Instance == null)
@@ -34,6 +41,8 @@ public class GhostManager : MonoBehaviour
             Animator animator = currentGhost.GetComponent<Animator>();
 
             currentGhost.AddComponent<ReapedHandler>();
+            currentGhost.GetComponent<ReapedHandler>().ID = i;
+            currentGhost.GetComponentInChildren<ShineBehavior>().possessedID = i;
 
             //adding collider
             if (this.Possesed[i].GetComponent<MeshCollider>() == null)
@@ -43,7 +52,8 @@ public class GhostManager : MonoBehaviour
 
             animator.SetBool("isPossessed", true);
         }
-        
+
+        EventBroadcaster.Instance.AddObserver(EventNames.Reap_Events.ON_REAP, this.ReapSoul);
     }
 
     // Update is called once per frame
