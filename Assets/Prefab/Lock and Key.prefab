@@ -33,6 +33,7 @@ Transform:
   - {fileID: 2223423945615263535}
   - {fileID: 3718852141450773979}
   - {fileID: 278700612795373145}
+  - {fileID: 4275354247851811234}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &59667850623263442
@@ -57,6 +58,69 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &4239716352457867077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4275354247851811234}
+  - component: {fileID: 7604609651862805004}
+  - component: {fileID: 7596697398109990838}
+  m_Layer: 0
+  m_Name: Shine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4275354247851811234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4239716352457867077}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0049, y: 0.034, z: -0.153}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 924852972828603657}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7604609651862805004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4239716352457867077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844c3083fef3f4544bb6b876fa518a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  possessedID: 0
+--- !u!123 &7596697398109990838
+LensFlare:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4239716352457867077}
+  m_Enabled: 1
+  m_Flare: {fileID: 12100000, guid: 972321fcac65c424e84b0986fb6dcabb, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Brightness: 1
+  m_FadeSpeed: 3
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 6
+  m_Directional: 0
 --- !u!1 &4552100009771873208
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 4552100009771873208}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6830128, y: 0.18301243, z: 0.18301235, w: -0.68301284}
-  m_LocalPosition: {x: 23.240902, y: -7.2453284, z: 0.061511993}
+  m_LocalPosition: {x: -0.011, y: 0.0125, z: -0.0221}
   m_LocalScale: {x: 0.0359, y: 0.035899993, z: 0.035899997}
   m_ConstrainProportionsScale: 0
   m_Children: []
