@@ -50,11 +50,13 @@ public class Lamp : MonoBehaviour {
         this.CheckReapedSoul();
 
         if (this.soul != null) {
-            Debug.Log(this.soul.gameObject.name);
             this.CalculateDistance();
         }
         else {
-            this.light.intensity = 0.0f;
+            if(this.light.intensity > 0.0f) {
+                this.light.intensity -= 0.01f;
+            }
+            
         }
     }
 
