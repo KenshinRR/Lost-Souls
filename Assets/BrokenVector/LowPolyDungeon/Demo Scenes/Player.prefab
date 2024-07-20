@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 7688271967369609096}
   - component: {fileID: 5676987328264425983}
   - component: {fileID: 6666991388198656447}
+  - component: {fileID: 3734297723297950272}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -147,6 +148,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 120
   playerBody: {fileID: 3974949403196633252}
+--- !u!124 &3734297723297950272
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724717612353679255}
+  m_Enabled: 1
 --- !u!1 &2007543300017658820
 GameObject:
   m_ObjectHideFlags: 0
@@ -45699,6 +45708,7 @@ GameObject:
   - component: {fileID: 5957913067961658075}
   - component: {fileID: 5894489538185376236}
   - component: {fileID: 5924030461236568022}
+  - component: {fileID: 758856065618235615}
   m_Layer: 0
   m_Name: Candle Flame
   m_TagString: Untagged
@@ -45715,7 +45725,7 @@ Transform:
   m_GameObject: {fileID: 9205657244538246975}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 1.519, z: -0.12}
+  m_LocalPosition: {x: 0.3, y: 1.83, z: -0.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45975,7 +45985,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.15
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -47236,7 +47246,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.008
+      scalar: 0.015
       minScalar: -0.001
       maxCurve:
         serializedVersion: 2
@@ -50532,7 +50542,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0.9169811, g: 0.7514324, b: 0.16436444, a: 1}
   m_Intensity: 1.5
-  m_Range: 2
+  m_Range: 3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -50581,6 +50591,21 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &758856065618235615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9205657244538246975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66bf46c3c80fb1647a4fcb56541d8696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flickerIntensity: 0.2
+  flickersPerSecond: 3
+  speedRandom: 10
 --- !u!1001 &1545995106956263194
 PrefabInstance:
   m_ObjectHideFlags: 0
