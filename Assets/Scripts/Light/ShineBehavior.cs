@@ -44,7 +44,8 @@ public class ShineBehavior : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.name == this.player.name) {
+        ReapedHandler reaped = this.GetComponentInParent<ReapedHandler>();
+        if (other.gameObject.name == this.player.name && reaped != null)  {
             this.Shine = true;
         }
     }
