@@ -59,6 +59,12 @@ public class EventNames {
 		public const string ON_OUT = "ON_OUT";
 	}
 
+    public class GameOver_Events
+    {
+        public const string ON_TIMEOUT = "ON_TIMEOUT";
+        public const string ON_FOUND = "ON_FOUND";
+    }
+
 }
 
 

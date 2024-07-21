@@ -54,11 +54,16 @@ public class GhostManager : MonoBehaviour
         }
 
         EventBroadcaster.Instance.AddObserver(EventNames.Reap_Events.ON_REAP, this.ReapSoul);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //if you win
+        if(Possesed.Count == 0)
+        {
+            EventBroadcaster.Instance.PostEvent(EventNames.GameOver_Events.ON_FOUND);
+        }
     }
 }
