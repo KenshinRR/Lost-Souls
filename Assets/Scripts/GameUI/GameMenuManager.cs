@@ -53,6 +53,8 @@ public class GameMenuManager : MonoBehaviour
     private int minutes = 0;
 
     private bool gameOver = false;
+    //lazyness
+    private bool runOnce = false;
 
 
     private void Awake()
@@ -68,12 +70,12 @@ public class GameMenuManager : MonoBehaviour
     }
     void Start()
     {
-        ghostTotal = GhostManager.Instance.Possessed.Count;
+       
         EventBroadcaster.Instance.AddObserver(EventNames.Reap_Events.ON_REAP, this.GhostCaught);
         EventBroadcaster.Instance.AddObserver(EventNames.GameOver_Events.ON_FOUND, this.GhostsFound);
+        
 
-
-        ghostTracker.text = "Souls Found: " + ghostFound + "/" + ghostTotal;
+        
 
         //setting reapFound to be not visible
         textCol = reapFound.color;
@@ -81,7 +83,7 @@ public class GameMenuManager : MonoBehaviour
         reapFound.color = textCol;
 
         //setting timer in seconds
-        time = 60;
+        time = 180;
         timeInitial = time;
         Timing(time);       
     }
@@ -89,8 +91,16 @@ public class GameMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //due to possessed being 0 on start, getting the amount of ghosts is harder and i settled with just a lazy answer.
+        if (!runOnce)
+        {
+            runOnce = true;
+            ghostTotal = GhostManager.Instance.Possessed.Count;
+            ghostTracker.text = "Souls Found: " + ghostFound + "/" + ghostTotal;
+        }
+      
         //if reapfound is visible, graduall make it invisible
-        if(reapFound.color.a >0.0f)
+        if (reapFound.color.a >0.0f)
         {
             float dissapearSpeed = 0.5f;
             textCol.a -= Time.deltaTime * dissapearSpeed;
@@ -128,6 +138,7 @@ public class GameMenuManager : MonoBehaviour
 
     private void GhostCaught(Parameters parameters)
     {
+
         ghostFound++;
         ghostTracker.text = string.Format("Souls Found:: {0:00}/{1:00}", ghostFound, ghostTotal);  
 

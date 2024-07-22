@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GhostManager : MonoBehaviour
@@ -8,6 +9,9 @@ public class GhostManager : MonoBehaviour
 
     [SerializeField]
     private List<GameObject> Possesed;
+
+    [SerializeField]
+    private List<GameObject> Ghostables;
 
     public List<GameObject> Possessed
     {
@@ -35,7 +39,25 @@ public class GhostManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < Possesed.Count; i++)
+        for(int x = 0; x < Ghostables.Count; x++)
+        {
+            //randomly makes each object have 50% chance of being possessed
+            Randomizer(Ghostables[x]);
+        }
+        //setting a minimum just in case
+        int min = 3;
+        if (Possesed.Count < min)
+        {
+            Possessed.Clear();
+            for (int x = 0; x < min; x++)
+            {
+                Possessed.Add(Ghostables[x]);
+            }
+
+        }
+
+        //setting up reaping and anything else
+        for (int i = 0; i < Possesed.Count; i++)
         {
             GameObject currentGhost = this.Possesed[i];
             Animator animator = currentGhost.GetComponent<Animator>();
@@ -51,8 +73,14 @@ public class GhostManager : MonoBehaviour
             //}
 
             animator.SetBool("isPossessed", true);
+            
+
         }
 
+        Parameters param = new Parameters();
+        param.PutObjectExtra("POSSESS", Possesed.Count);
+
+        
         EventBroadcaster.Instance.AddObserver(EventNames.Reap_Events.ON_REAP, this.ReapSoul);
 
     }
@@ -64,6 +92,23 @@ public class GhostManager : MonoBehaviour
         if(Possesed.Count == 0)
         {
             EventBroadcaster.Instance.PostEvent(EventNames.GameOver_Events.ON_FOUND);
+        }
+    }
+
+    void Randomizer(GameObject ghost) {
+        float chances = Random.Range(0.0f, 1.0f);
+
+        Debug.Log("Chance was: " + chances);
+
+        if(chances > 0.5)
+        {
+            Possesed.Add(ghost);
+        }
+        else
+        {
+            ghost.GetComponent<Animator>().SetBool("isPossessed", false);
+            ghost.gameObject.GetComponentInChildren<CharacterController>().gameObject.SetActive(false);
+            ghost.gameObject.GetComponentInChildren<LensFlare>().gameObject.SetActive(false);
         }
     }
 }
