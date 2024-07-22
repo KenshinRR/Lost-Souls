@@ -23911,7 +23911,6 @@ GameObject:
   - component: {fileID: 5111065081543560011}
   - component: {fileID: 709096076252973448}
   - component: {fileID: 8017408747713483959}
-  - component: {fileID: 1931465028209465645}
   - component: {fileID: 4991479930447110015}
   m_Layer: 0
   m_Name: Candle Flame
@@ -23929,7 +23928,7 @@ Transform:
   m_GameObject: {fileID: 4288636621424702200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 1.83, z: -0.66}
+  m_LocalPosition: {x: -0.23, y: 1.68, z: -0.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28795,21 +28794,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1931465028209465645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4288636621424702200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66bf46c3c80fb1647a4fcb56541d8696, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flickerIntensity: 0.2
-  flickersPerSecond: 3
-  speedRandom: 10
 --- !u!114 &4991479930447110015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44137,7 +44121,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.735098, z: -0, w: -0.67796093}
   m_LocalPosition: {x: 0.61, y: -0.48, z: 0.762}
-  m_LocalScale: {x: 0.31661093, y: 0.3517901, z: 0.3166108}
+  m_LocalScale: {x: 0.3166109, y: 0.3517901, z: 0.31661078}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7258545032582051383}
