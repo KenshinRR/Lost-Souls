@@ -12,13 +12,9 @@ public class PlayerMovement : MonoBehaviour
 
     float speedBoost = 1f;
     Vector3 velocity;
-    void Start()
-    {
 
-    }
-
-    void Update()
-    {
+    private bool onMove = true;
+    private void Move() {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -29,13 +25,11 @@ public class PlayerMovement : MonoBehaviour
         else
             speedBoost = 1f;
 
-        if (Input.GetButtonDown("Jump") && controller.isGrounded)
-        {
+        if (Input.GetButtonDown("Jump") && controller.isGrounded) {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        if (controller.isGrounded && velocity.y < 0) 
-        {
+        if (controller.isGrounded && velocity.y < 0) {
             velocity.y = -2f;
         }
 
@@ -44,5 +38,26 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * (baseSpeed + speedBoost) * Time.deltaTime);
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void OnGameEnd() {
+        this.onMove = false;
+    }
+    void Start()
+    {
+        EventBroadcaster.Instance.AddObserver(EventNames.GameOver_Events.ON_TIMEOUT, this.OnGameEnd);
+        EventBroadcaster.Instance.AddObserver(EventNames.GameOver_Events.ON_FOUND, this.OnGameEnd);
+    }
+
+    private void OnDestroy() {
+        EventBroadcaster.Instance.RemoveObserver(EventNames.GameOver_Events.ON_FOUND);
+        EventBroadcaster.Instance.RemoveObserver(EventNames.GameOver_Events.ON_TIMEOUT);
+    }
+
+    void Update()
+    {
+        if (this.onMove) {
+            this.Move();
+        }
     }
 }
