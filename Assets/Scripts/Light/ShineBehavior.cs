@@ -60,6 +60,10 @@ public class ShineBehavior : MonoBehaviour {
     
         EventBroadcaster.Instance.AddObserver(EventNames.Light_Events.ON_OUT, this.FlareOut);
     }
+
+    private void OnDestroy() {
+        EventBroadcaster.Instance.RemoveObserver(EventNames.Light_Events.ON_OUT);
+    }
     private void Update() {
         this.CheckShine();
     }
