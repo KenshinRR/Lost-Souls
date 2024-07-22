@@ -193,6 +193,8 @@ GameObject:
   - component: {fileID: 35371641}
   - component: {fileID: 35371640}
   - component: {fileID: 35371639}
+  - component: {fileID: 35371642}
+  - component: {fileID: 35371643}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -274,6 +276,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 32604482}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!124 &35371642
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35371638}
+  m_Enabled: 1
+--- !u!143 &35371643
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35371638}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &49567913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -330,6 +366,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 35371638}
+    - target: {fileID: 3478338588562418237, guid: 6432fb044e9357146aa0754a00bfae51, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944863354580480914, guid: 6432fb044e9357146aa0754a00bfae51, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0439
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
