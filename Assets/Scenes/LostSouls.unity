@@ -31065,6 +31065,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1327858540}
     m_Modifications:
+    - target: {fileID: 1356229504804996827, guid: c559a22601843db4c927941c06a8b94b, type: 3}
+      propertyPath: VelocityModule.x.scalar
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356229504804996827, guid: c559a22601843db4c927941c06a8b94b, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356229504804996827, guid: c559a22601843db4c927941c06a8b94b, type: 3}
+      propertyPath: VelocityModule.x.minScalar
+      value: -0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356229504804996827, guid: c559a22601843db4c927941c06a8b94b, type: 3}
+      propertyPath: VelocityModule.z.minScalar
+      value: -0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 4725356937742542618, guid: c559a22601843db4c927941c06a8b94b, type: 3}
       propertyPath: m_Name
       value: Candle_Wall (5)
@@ -62850,6 +62866,26 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 194895073}
+    - target: {fileID: 5111065081543560011, guid: 79a07aa9812d8df4f9a4c4d142e8ac18, type: 3}
+      propertyPath: VelocityModule.x.scalar
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111065081543560011, guid: 79a07aa9812d8df4f9a4c4d142e8ac18, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111065081543560011, guid: 79a07aa9812d8df4f9a4c4d142e8ac18, type: 3}
+      propertyPath: VelocityModule.z.scalar
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111065081543560011, guid: 79a07aa9812d8df4f9a4c4d142e8ac18, type: 3}
+      propertyPath: VelocityModule.x.minScalar
+      value: -0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111065081543560011, guid: 79a07aa9812d8df4f9a4c4d142e8ac18, type: 3}
+      propertyPath: VelocityModule.z.minScalar
+      value: -0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 5224985397624840191, guid: 79a07aa9812d8df4f9a4c4d142e8ac18, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -63522,10 +63558,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e478c0cc6d326d0428f3ef40bdce5aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 8820473408580833296}
-  baseSpeed: 3
+  PB: {fileID: 8820473408580833296}
+  playerSpeed: 5
   gravity: -30
-  jumpHeight: 1.2
   sprintSpeed: 5
 --- !u!1001 &6730397242121987693
 PrefabInstance:
