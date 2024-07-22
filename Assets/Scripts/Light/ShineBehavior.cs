@@ -32,23 +32,27 @@ public class ShineBehavior : MonoBehaviour {
         this.distance = Vector3.Distance(this.transform.position, this.player.transform.position);
         this.distance = Mathf.Clamp(distance, 0, 5.1f);
 
-        if (this.distance < 2.0f) {
-            this.Shine = true;
-            this.flareShine = this.StartCoroutine(this.ShineInterval(2.5f));
+
+        if (this.distance < 2.0f && this.Shine == true) {
+            if (this.flareShine == null) {
+                this.flareShine = this.StartCoroutine(this.ShineInterval(1.5f));
+            }
         }
         else {
-            this.flare.enabled = false;
-            this.Shine = false;
+            if (this.flareShine != null) {
+                this.StopCoroutine(this.flareShine);
+                this.flareShine = null;
+                this.flare.enabled = false;
+            }
         }
     }
 
     private IEnumerator ShineInterval(float duration) {
-        while(this.Shine) {
-            Debug.Log("shine please");
+        while (true) {
             this.flare.enabled = true;
             yield return new WaitForSeconds(duration);
             this.flare.enabled = false;
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(5.0f);
         }
     }
 
