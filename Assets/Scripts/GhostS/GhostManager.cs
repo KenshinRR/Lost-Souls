@@ -52,6 +52,9 @@ public class GhostManager : MonoBehaviour
             for (int x = 0; x < min; x++)
             {
                 Possessed.Add(Ghostables[x]);
+                Possesed[x].GetComponent<Animator>().SetBool("isPossessed", false);
+                Possesed[x].gameObject.GetComponentInChildren<CharacterController>().gameObject.SetActive(false);
+                Possesed[x].gameObject.GetComponentInChildren<LensFlare>().gameObject.SetActive(false);
             }
 
         }
@@ -98,7 +101,7 @@ public class GhostManager : MonoBehaviour
     void Randomizer(GameObject ghost) {
         float chances = Random.Range(0.0f, 1.0f);
 
-        Debug.Log("Chance was: " + chances);
+        
 
         if(chances > 0.5)
         {
