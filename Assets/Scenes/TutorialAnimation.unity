@@ -3791,7 +3791,8 @@ MonoBehaviour:
   - {fileID: 49567914}
   - {fileID: 49567914}
   - {fileID: 49567914}
-  Ghostables: []
+  Ghostables:
+  - {fileID: 49567914}
   ReapAttempts: 0
 --- !u!1001 &1771493299
 PrefabInstance:

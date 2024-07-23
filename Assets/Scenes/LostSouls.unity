@@ -34618,6 +34618,7 @@ MonoBehaviour:
   - {fileID: 289661310}
   - {fileID: 706287946}
   - {fileID: 1977756603}
+  ReapAttempts: 3
 --- !u!4 &1198629168
 Transform:
   m_ObjectHideFlags: 0
@@ -63697,7 +63698,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 72
   orthographic: 0

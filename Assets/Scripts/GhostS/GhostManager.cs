@@ -43,7 +43,6 @@ public class GhostManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.ReapAttempts = 3;
 
         for(int x = 0; x < Ghostables.Count; x++)
         {
