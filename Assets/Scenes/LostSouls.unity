@@ -9009,6 +9009,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1758828401}
     m_Modifications:
+    - target: {fileID: 1184314060219606079, guid: b6b4ed3a3156e54418c92db637dac070, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5762005488281034412}
     - target: {fileID: 1790153379284481042, guid: b6b4ed3a3156e54418c92db637dac070, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.11114545
@@ -9542,6 +9546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel_ClosedGhostable
       objectReference: {fileID: 0}
+    - target: {fileID: 5443001599167681324, guid: 3a19732579cc60a4ca38a8586d7096fb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5762005488281034412}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21196,6 +21204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book_OpenGhostable
       objectReference: {fileID: 0}
+    - target: {fileID: 8327529556536760518, guid: 27ebe52eca835c844b60e6c48123b413, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5762005488281034412}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35534,6 +35546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stool_roundGhostable
       objectReference: {fileID: 0}
+    - target: {fileID: 7595151955779954451, guid: 1c807b4658c9fa64b932d78a763edf76, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5762005488281034412}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -57377,6 +57393,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5037480756406246523, guid: d42c899380d45c241a9ab33ae89536f8, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5762005488281034412}
     - target: {fileID: 5543736685114557361, guid: d42c899380d45c241a9ab33ae89536f8, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.031173117
