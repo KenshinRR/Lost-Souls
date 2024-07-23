@@ -26,7 +26,8 @@ public class ReapedHandler : MonoBehaviour
             //removing hitbox
             BoxCollider hitBox = this.gameObject.GetComponent<BoxCollider>();
             if (hitBox != null ) Destroy(hitBox);
-                
+
+            GhostManager.Instance.ReapAttempts++;
 
             Destroy(this);
         }
