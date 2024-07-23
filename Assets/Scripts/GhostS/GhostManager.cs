@@ -18,12 +18,16 @@ public class GhostManager : MonoBehaviour
         get { return this.Possesed;}
     }
 
+    [SerializeField]
+    public int ReapAttempts;
+
     public const string SOUL = "SOUl";
     public void ReapSoul(Parameters parameters) {
         GameObject soul = parameters.GetGameObjectExtra(SOUL);
         
         this.Possesed.Remove(soul);
     }
+
     private void Awake()
     {
         if(Instance == null)
@@ -39,6 +43,8 @@ public class GhostManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.ReapAttempts = 3;
+
         for(int x = 0; x < Ghostables.Count; x++)
         {
             //randomly makes each object have 50% chance of being possessed
