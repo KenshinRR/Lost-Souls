@@ -63,6 +63,7 @@ public class EventNames {
     {
         public const string ON_TIMEOUT = "ON_TIMEOUT";
         public const string ON_FOUND = "ON_FOUND";
+		public const string ON_ANIM_STOP = "ON_ANIM_STOP";
     }
 
     

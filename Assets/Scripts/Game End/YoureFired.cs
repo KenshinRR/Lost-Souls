@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,9 @@ public class YoureFired : MonoBehaviour
     private float _ticks = 0.0f;
 
     private bool _liftOff = true;
+
+    [SerializeField]
+    private GameObject _gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +33,9 @@ public class YoureFired : MonoBehaviour
             Rigidbody handler = GetComponent<Rigidbody>();
 
             handler.AddForce((Vector3.up + Vector3.forward) * 1000);
+            this._gameOver.SetActive(true);
         }
 
-        if (this._ticks > 5.0f)
-            SceneManager.LoadScene("LostSoulsMainMenu");
+        
     }
 }
