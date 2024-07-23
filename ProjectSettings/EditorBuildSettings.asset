@@ -17,5 +17,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialAnimation.unity
     guid: 9e93d5d562f82514d99dbcd583cfb675
+  - enabled: 1
+    path: Assets/Scenes/GameLoss.unity
+    guid: 4d66521edfe480e45bd4b41067c80621
+  - enabled: 1
+    path: Assets/Scenes/GameWin.unity
+    guid: 2e92e77c3a2be664fb412944d7806192
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
