@@ -30,8 +30,9 @@ public class MainMenuManager : MonoBehaviour
    
     public void StartPressed()
     {
-        Sceneloader("LostSouls");
-        
+        //Sceneloader("LostSouls");
+        SceneManager.LoadScene("SoulsEscapingScene");
+
         SceneToLoad = "LostSouls";
     }
 
@@ -56,6 +57,12 @@ public class MainMenuManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Current scene to load: " + SceneToLoad);
+            Debug.Log("Current HasWatchedTutorial: " + PlayerPrefs.GetInt("HasWatchedTutorial"));
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayerPrefs.SetInt("HasWatchedTutorial", 0);
+            PlayerPrefs.Save();
         }
     }
     private async void Sceneloader(string scene)

@@ -6,10 +6,12 @@ public class ShineBehavior : MonoBehaviour {
     [SerializeField] GameObject player;
     private LensFlare flare;
 
-    private bool Shine = false;
+    private bool Shine = true;
     private float distance = 0.0f;
 
     public int possessedID;
+
+    private Coroutine flareShine;
 
     public const string ID = "ID";
 
@@ -17,7 +19,7 @@ public class ShineBehavior : MonoBehaviour {
         int id = parameters.GetIntExtra(ID, 0);
 
         if(id != this.possessedID) {
-            //Debug.Log($"ID not Found on possessedID{this.possessedID}");
+            Debug.Log($"ID not Found on possessedID{this.possessedID}");
         }
         
         if(id == this.possessedID) {
@@ -26,32 +28,32 @@ public class ShineBehavior : MonoBehaviour {
 
     }
     private void CheckShine() {
-        if (this.Shine) {
-            this.distance = Vector3.Distance(this.transform.position, this.player.transform.position);
-            this.distance = Mathf.Clamp(distance, 0, 5.1f);
+        
+        this.distance = Vector3.Distance(this.transform.position, this.player.transform.position);
+        this.distance = Mathf.Clamp(distance, 0, 5.1f);
+
+
+        if (this.distance < 2.0f && this.Shine == true) {
+            if (this.flareShine == null) {
+                this.flareShine = this.StartCoroutine(this.ShineInterval(1.5f));
+            }
         }
         else {
-            this.distance = 2.0f;
+            if (this.flareShine != null) {
+                this.StopCoroutine(this.flareShine);
+                this.flareShine = null;
+                this.flare.enabled = false;
+            }
         }
+    }
 
-
-        if (this.distance < 2.0f) {
+    private IEnumerator ShineInterval(float duration) {
+        while (true) {
             this.flare.enabled = true;
-        }
-        else {
+            yield return new WaitForSeconds(duration);
             this.flare.enabled = false;
+            yield return new WaitForSeconds(5.0f);
         }
-    }
-
-    private void OnTriggerEnter(Collider other) {
-        ReapedHandler reaped = this.GetComponentInParent<ReapedHandler>();
-        if (other.gameObject.name == this.player.name && reaped != null)  {
-            this.Shine = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other) {
-        this.Shine = false;
     }
 
     private void Start() {
