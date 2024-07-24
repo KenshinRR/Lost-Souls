@@ -10,5 +10,6 @@ public class ScythSwooshSFXHandler : MonoBehaviour
     private void OnEnable()
     {
         this._swooshSFX.Play();
+        
     }
 }

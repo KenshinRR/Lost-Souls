@@ -53,6 +53,7 @@ public class EventNames {
 
     public class Reap_Events {
         public const string ON_REAP = "ON_REAP";
+        public const string ON_REAP_END = "ON_REAP_END";
     }
 
     public class Light_Events {
@@ -63,7 +64,7 @@ public class EventNames {
     {
         public const string ON_TIMEOUT = "ON_TIMEOUT";
         public const string ON_FOUND = "ON_FOUND";
-		public const string ON_ANIM_STOP = "ON_ANIM_STOP";
+		
     }
 
     

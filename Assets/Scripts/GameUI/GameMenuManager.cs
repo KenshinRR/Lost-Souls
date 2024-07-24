@@ -115,9 +115,9 @@ public class GameMenuManager : MonoBehaviour
        
         EventBroadcaster.Instance.AddObserver(EventNames.Reap_Events.ON_REAP, this.GhostCaught);
         EventBroadcaster.Instance.AddObserver(EventNames.GameOver_Events.ON_FOUND, this.GhostsFound);
-        
+        EventBroadcaster.Instance.AddObserver(EventNames.Reap_Events.ON_REAP_END,this.SwingChecker);
 
-        
+
 
         //setting reapFound to be not visible
         textCol = reapFound.color;
@@ -154,13 +154,21 @@ public class GameMenuManager : MonoBehaviour
             Timing(time);
         }
         swings.text = "Swings Remaining: " + GhostManager.Instance.ReapAttempts.ToString();
-        if(GhostManager.Instance.ReapAttempts == 0)
+
+
+        
+        
+        
+    }
+
+    private void SwingChecker()
+    {
+        Debug.Log("Checking Swing");
+        if (GhostManager.Instance.ReapAttempts == 0)
         {
             EventBroadcaster.Instance.PostEvent(EventNames.GameOver_Events.ON_TIMEOUT);
             TimeOut();
         }
-        
-        
     }
     public void Timing(float time)
     {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class ReapHandler : StateMachineBehaviour
 {
@@ -30,6 +31,9 @@ public class ReapHandler : StateMachineBehaviour
     {
         animator.SetBool("isReaping", false);
         this._isReaping = false;
+
+        
+        
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
