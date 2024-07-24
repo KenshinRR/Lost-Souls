@@ -14,6 +14,8 @@ public class MainMenuManager : MonoBehaviour
 
     [SerializeField] private GameObject buttons;
     [SerializeField] private GameObject loadingText;
+    [SerializeField] private GameObject credits;
+    [SerializeField] private GameObject mainMenu;
 
 
     private void Awake()
@@ -44,7 +46,14 @@ public class MainMenuManager : MonoBehaviour
 
     public void CreditsPressed()
     {
-        SceneManager.LoadScene("LostSouls");
+       this.credits.SetActive(true);
+        this.mainMenu.SetActive(false);
+    }
+
+    public void BackToMenuPressed()
+    {
+        this.credits.SetActive(false);
+        this.mainMenu.SetActive(true);
     }
 
     public void QuitPressed()

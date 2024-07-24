@@ -119,4 +119,9 @@ public class GhostManager : MonoBehaviour
             ghost.gameObject.GetComponentInChildren<LensFlare>().gameObject.SetActive(false);
         }
     }
+
+    private void OnDestroy()
+    {
+        EventBroadcaster.Instance.RemoveObserver(EventNames.Reap_Events.ON_REAP);
+    }
 }

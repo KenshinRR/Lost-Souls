@@ -156,6 +156,7 @@ public class GameMenuManager : MonoBehaviour
         swings.text = "Swings Remaining: " + GhostManager.Instance.ReapAttempts.ToString();
         if(GhostManager.Instance.ReapAttempts == 0)
         {
+            EventBroadcaster.Instance.PostEvent(EventNames.GameOver_Events.ON_TIMEOUT);
             TimeOut();
         }
         
@@ -246,5 +247,11 @@ public class GameMenuManager : MonoBehaviour
         }
         
 
+    }
+
+    private void OnDestroy()
+    {
+        EventBroadcaster.Instance.RemoveObserver(EventNames.Reap_Events.ON_REAP);
+        EventBroadcaster.Instance.RemoveObserver(EventNames.GameOver_Events.ON_FOUND);
     }
 }
