@@ -1,36 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using System.Threading.Tasks;
 
-public class ReapHandler : StateMachineBehaviour
+public class ReapedBehaviour : StateMachineBehaviour
 {
-    private bool _isReaping = false;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-    }
+    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        if (Input.GetMouseButtonDown(0) &&
-            GhostManager.Instance.ReapAttempts > 0 &&
-            !this._isReaping
-            )
-        {
-            this._isReaping = true;
-            animator.SetBool("isReaping", true);
-        }
-    }
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("isReaping", false);
-        this._isReaping = false;
-        
+        if (!GhostManager.Instance.GhostFound) GhostManager.Instance.ReapAttempts--;
+        GhostManager.Instance.GhostFound = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

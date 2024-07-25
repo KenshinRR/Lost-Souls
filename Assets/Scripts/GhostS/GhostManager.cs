@@ -21,6 +21,8 @@ public class GhostManager : MonoBehaviour
     [SerializeField]
     public int ReapAttempts;
 
+    public bool GhostFound = false;
+
     public const string SOUL = "SOUl";
     public void ReapSoul(Parameters parameters) {
         GameObject soul = parameters.GetGameObjectExtra(SOUL);

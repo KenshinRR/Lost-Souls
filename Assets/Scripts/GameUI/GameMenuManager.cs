@@ -210,7 +210,6 @@ public class GameMenuManager : MonoBehaviour
         //set reap found to visible
         textCol.a = 1.0f;
         reapFound.color = textCol;
-        GhostManager.Instance.ReapAttempts
 
         
     }

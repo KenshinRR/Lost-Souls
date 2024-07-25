@@ -27,6 +27,8 @@ public class ReapedHandler : MonoBehaviour
             BoxCollider hitBox = this.gameObject.GetComponent<BoxCollider>();
             if (hitBox != null ) Destroy(hitBox);
 
+            Debug.Log("Reaped!");
+            GhostManager.Instance.GhostFound = true;
             
 
             Destroy(this);
