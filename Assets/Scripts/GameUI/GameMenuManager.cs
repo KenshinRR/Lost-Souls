@@ -115,7 +115,7 @@ public class GameMenuManager : MonoBehaviour
        
         EventBroadcaster.Instance.AddObserver(EventNames.Reap_Events.ON_REAP, this.GhostCaught);
         EventBroadcaster.Instance.AddObserver(EventNames.GameOver_Events.ON_FOUND, this.GhostsFound);
-        EventBroadcaster.Instance.AddObserver(EventNames.Reap_Events.ON_REAP_END,this.SwingChecker);
+        
 
 
 
@@ -156,26 +156,15 @@ public class GameMenuManager : MonoBehaviour
         swings.text = "Swings Remaining: " + GhostManager.Instance.ReapAttempts.ToString();
 
         //this code will kill the game when zero, uncomment it if you just want a straight up test
-        //if (GhostManager.Instance.ReapAttempts == 0)
-        //{
-        //    EventBroadcaster.Instance.PostEvent(EventNames.GameOver_Events.ON_TIMEOUT);
-        //    TimeOut();
-        //}
-
-
-    }
-    /// <summary>
-    /// KENSHIN, call this via event handler, this checks if game will die via no swings left.
-    /// </summary>
-    private void SwingChecker()
-    {
-        Debug.Log("Checking Swing");
         if (GhostManager.Instance.ReapAttempts == 0)
         {
             EventBroadcaster.Instance.PostEvent(EventNames.GameOver_Events.ON_TIMEOUT);
             TimeOut();
         }
+
+
     }
+    
     public void Timing(float time)
     {
         seconds = Mathf.FloorToInt(time % 60);
