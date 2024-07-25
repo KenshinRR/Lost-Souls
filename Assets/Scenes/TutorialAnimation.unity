@@ -3787,13 +3787,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e902c52e211e2af458e116cdc0bb6516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Possesed:
-  - {fileID: 49567914}
-  - {fileID: 49567914}
-  - {fileID: 49567914}
+  Possesed: []
   Ghostables:
   - {fileID: 49567914}
+  - {fileID: 49567914}
+  - {fileID: 49567914}
+  - {fileID: 49567914}
   ReapAttempts: 0
+  GhostFound: 0
 --- !u!1001 &1771493299
 PrefabInstance:
   m_ObjectHideFlags: 0
