@@ -24,6 +24,10 @@ public class GhostManager : MonoBehaviour
     public bool GhostFound = false;
 
     public const string SOUL = "SOUl";
+
+    [SerializeField]
+    private int minPossessed = 3;
+
     public void ReapSoul(Parameters parameters) {
         GameObject soul = parameters.GetGameObjectExtra(SOUL);
         
@@ -52,7 +56,7 @@ public class GhostManager : MonoBehaviour
             Randomizer(Ghostables[x]);
         }
         //setting a minimum just in case
-        int min = 3;
+        int min = minPossessed;
         if (Possesed.Count < min)
         {
             Possessed.Clear();
@@ -60,8 +64,12 @@ public class GhostManager : MonoBehaviour
             {
                 Possessed.Add(Ghostables[x]);
                 Possesed[x].GetComponent<Animator>().SetBool("isPossessed", false);
-                Possesed[x].gameObject.GetComponentInChildren<CharacterController>().gameObject.SetActive(false);
-                Possesed[x].gameObject.GetComponentInChildren<LensFlare>().gameObject.SetActive(false);
+                CharacterController CCbuffer = Possesed[x].gameObject.GetComponentInChildren<CharacterController>();
+                if (CCbuffer != null)
+                CCbuffer.gameObject.SetActive(false);
+                LensFlare LFBuffer = Possesed[x].gameObject.GetComponentInChildren<LensFlare>();
+                if (LFBuffer != null)
+                LFBuffer.gameObject.SetActive(false);
             }
 
         }

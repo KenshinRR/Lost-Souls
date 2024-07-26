@@ -3790,11 +3790,9 @@ MonoBehaviour:
   Possesed: []
   Ghostables:
   - {fileID: 49567914}
-  - {fileID: 49567914}
-  - {fileID: 49567914}
-  - {fileID: 49567914}
   ReapAttempts: 0
   GhostFound: 0
+  minPossessed: 1
 --- !u!1001 &1771493299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4676,7 +4674,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a70bb8cc6f2f1264ca428014d144ed05, type: 3}
   - {fileID: 8300000, guid: aad0de67fd26aac4b9407c4fea5ba775, type: 3}
   - {fileID: 8300000, guid: 97df2f2f459910746acc62c14f8d8bdc, type: 3}
-  - {fileID: 8300000, guid: 2e993fb91023c3f4fbc7af6baabb0ae1, type: 3}
+  - {fileID: 8300000, guid: 0db6f0297a0e54b4d9aa8468f8bae04c, type: 3}
   - {fileID: 8300000, guid: 4165a8737914e704eb1423064d0fd4ca, type: 3}
 --- !u!43 &1960874724
 Mesh:
